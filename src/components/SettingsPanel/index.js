@@ -8,7 +8,7 @@ const SettingsPanel = ({ editTextValue, handleEditChange, handleNodesPanel }) =>
 
         <div className='settings-panel_container'>
             <div className='settings-panel_header'>
-                <img className='settings-panel_img' src={logo} onClick={() => handleNodesPanel(false)} />
+                <img className='settings-panel_img' src={logo} onClick={() => handleNodesPanel(false)} alt='logo'/>
                 <span className='settings-panel_span'>Message</span>
             </div>
 

@@ -18,10 +18,10 @@ function CustomNode({ data = { label: "custom node" }, isConnectable = "true", }
             <div class="custom-box">
                 <div class="upper-half">
                     <div class="upper-half-container">
-                        <img src={logo} class="left-icon"></img>
+                        <img src={logo} class="left-icon" alt='logo'/>
                         <p class="heading">Send Message</p>
                     </div>
-                    <img src={whatsapp} class="right-icon"></img>
+                    <img src={whatsapp} class="right-icon" alt='logo'/>
                 </div>
 
                 <div class="lower-half">

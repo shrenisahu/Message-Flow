@@ -7,7 +7,7 @@ const MessageNode = ({ onDragStart }) => {
     return (
         <div className='message-node_container' onDragStart={(event) => onDragStart(event, 'selector')} draggable>
             <div className='message-node_message-container'>
-                <img src={logo} className='message-node_image' />
+                <img src={logo} className='message-node_image' alt='logo' />
                 <span className='message-node_span'> Message</span>
             </div>
         </div>
