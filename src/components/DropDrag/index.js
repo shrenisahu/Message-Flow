@@ -18,8 +18,6 @@ const DropDragFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodes
                     handleSaveClick={handleSaveClick} />
             </DnDProvider>
         </ReactFlowProvider>
-
-
     );
 }
 
