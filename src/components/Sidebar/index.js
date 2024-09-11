@@ -2,9 +2,9 @@ import React from 'react';
 import { useDnD } from '../DnDContext';
 import NodesPanel from '../NodesPanel/index';
 import SettingsPanel from '../SettingsPanel/index';
-const Sidebar = ({ showTextBox, editTextValue, handleEditChange, handleUpdateClick, handleNodesPanel }) => {
+const Sidebar = ({ showTextBox, editTextValue, handleEditChange, handleNodesPanel }) => {
 
-    const [_, setType] = useDnD();
+    const [, setType] = useDnD();
 
     const onDragStart = (event, nodeType) => {
         console.log("onDragStart")
@@ -19,7 +19,6 @@ const Sidebar = ({ showTextBox, editTextValue, handleEditChange, handleUpdateCli
                 <SettingsPanel
                     editTextValue={editTextValue}
                     handleEditChange={handleEditChange}
-                    handleUpdateClick={handleUpdateClick}
                     handleNodesPanel={handleNodesPanel}
                 />
                 :

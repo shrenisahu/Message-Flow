@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ReactFlow, addEdge, Controls, useReactFlow, applyNodeChanges, } from '@xyflow/react';
+import { ReactFlow, addEdge, Controls, useReactFlow } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import CustomNode from './CustomNode/index.js';
 import Sidebar from '../components/Sidebar/index.js';
@@ -81,30 +81,79 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
         return false;
     }
 
-    const handleUpdateClick = () => {
-        const res = nodes?.map((elem) => {
-            if (elem.id === editId) {
-                elem.data = {
-                    ...elem.data,
-                    label: editTextValue
-                }
+    // const handleUpdateClick = () => {
+    //     const res = nodes?.map((elem) => {
+    //         if (elem.id === editId) {
+    //             elem.data = {
+    //                 ...elem.data,
+    //                 label: editTextValue
+    //             }
 
-            }
-            return elem;
-        });
+    //         }
+    //         return elem;
+    //     });
 
-        console.log("handleUpdateClick", res)
-        // setNodes(res);
-        setNodes((nds) => applyNodeChanges(res, nds))
-        // setEditId("");
-        // setEditTextValue("");
-        // setShowTextBox(false)
-    }
+    //     console.log("handleUpdateClick", res)
+    //     // setNodes(res);
+    //     setNodes((nds) => applyNodeChanges(res, nds))
+    //     // setEditId("");
+    //     // setEditTextValue("");
+    //     // setShowTextBox(false)
+    // }
+
+
+    // useEffect(() => {
+    //     handleUpdateClick()
+    // }, [editId, editTextValue, nodes]);
+
+    // const handleUpdateClick = useCallback(() => {
+    //     const res = nodes?.map((elem) => {
+    //         if (elem.id === editId) {
+    //             return {
+    //                 ...elem,
+    //                 data: {
+    //                     ...elem.data,
+    //                     label: editTextValue
+    //                 }
+    //             };
+    //         }
+    //         return elem;
+    //     });
+    
+    //     console.log("handleUpdateClick", res);
+    //     setNodes((nds) => applyNodeChanges(res, nds));
+    //     // Uncomment these if needed:
+    //     // setEditId("");
+    //     // setEditTextValue("");
+    //     // setShowTextBox(false);
+    // }, [editId, editTextValue, setNodes]);
 
 
     useEffect(() => {
-        handleUpdateClick()
-    }, [editId, editTextValue]);
+        console.log("shree")
+        setNodes((nds) =>
+          nds.map((node) => {
+            if (node.id === editId) {
+              // it's important that you create a new node object
+              // in order to notify react flow about the change
+              return {
+                ...node,
+                data: {
+                  ...node.data,
+                  label: editTextValue,
+                },
+              };
+            }
+    
+            return node;
+          }),
+        );
+      }, [editId,editTextValue, setNodes]);
+
+    
+    // useEffect(() => {
+    //     handleUpdateClick();
+    // }, [handleUpdateClick]);
 
     const nodeTypes = {
         selector: CustomNode,
@@ -137,7 +186,6 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
                 showTextBox={showTextBox}
                 editTextValue={editTextValue}
                 handleEditChange={handleEditChange}
-                handleUpdateClick={handleUpdateClick}
                 handleNodesPanel={handleNodesPanel}
 
             />
