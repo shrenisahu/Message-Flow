@@ -1,0 +1,119 @@
+.custom-node_container{
+    margin: 2px;
+    min-width: 100px;
+    border:  1px solid rgb(197, 197, 197);
+    border-radius: 10px;
+}
+.custom-node_heading{
+    border-radius: 30%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+.custom-node_message-container{
+    
+    background-color: rgb(227, 227, 227);
+    font-size: 8px;
+    padding: 4px 4px;
+}
+
+.custom-node_heading-container{
+    
+    
+    background-color: aquamarine;
+    font-weight: bold;
+    font-size: 7px;
+    padding: 2px 4px;
+
+}
+
+.custom-node_heading-container-paragraph{
+    font-weight: bold;
+    font-size: 10px;
+    
+}
+.custom-node_message-container-paragraph{
+    font-size: 8px;
+}
+
+
+
+
+
+/* Custom box styling */
+.custom-box {
+  margin: 2px;
+  min-width: 110px;
+  border-radius: 6px;
+    overflow: hidden; /* Ensures the border-radius applies to inner content */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* border: 2px solid rgb(9, 9, 9); */
+  
+    
+
+  }
+  
+  /* Upper half with background color and icons */
+  .upper-half {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between; /* Icons and heading spaced equally */
+    align-items: center; /* Vertically align content */
+    padding: 2px 1px; 
+    position: relative;
+    font-size: 8px;
+   
+  }
+  
+  /* Heading in upper half */
+  .heading {
+    margin: 0;
+    
+
+    font-size: 8px;
+  }
+  
+  /* Icon styling */
+  .left-icon {
+    height: 7px;
+    width: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .right-icon {
+    height: 6px;
+    width: 6px;
+    border-radius:33px ;
+    border: 1px solid white;
+
+    margin-right: 3px;
+    /* padding-left: 10px;  
+    padding-right: 10px;  */
+    align-self: flex-end; /* Align the right icon to the extreme right */
+  }
+  
+  /* Lower half with different background color */
+  .lower-half {
+   
+    color: #333; 
+    padding-left: 5px;
+   
+  }
+  
+
+  .dynamic-data {
+    font-size: 8px;
+  
+  }
+  
+  
+  .custom-box:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid blue;
+  }
+
+  .upper-half-container{
+    display: flex;
+    align-items: center;
+  }
+  

@@ -1,0 +1,33 @@
+.message-node_container{
+    margin-bottom: 7px;
+    margin-top: 7px;
+    /* background-color: red; */
+    margin-right: 5px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 6%;
+    border: 1px solid #8896CB;
+
+}
+
+.message-node_message-container{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+align-items: center;
+
+    flex-direction: column;
+}
+
+.message-node_image{
+    width: 20px;
+    height: 20px;
+    padding-bottom: 5px;
+}
+
+.message-node_span{
+color:#8896CB;;
+}
