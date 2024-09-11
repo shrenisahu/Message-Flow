@@ -41,14 +41,14 @@ function App() {
       <div className='main-app' >
         <div className='main-app_header'>
           <button
-            class="header-button"
+            className="header-button"
             onClick={() => handleSaveClick()}
           >Save Changes</button>
 
           {showError && <button className="error-button" >Cannot Save Flow</button>}
 
         </div>
-        
+
         <DropDragFlow
           nodes={nodes}
           setNodes={setNodes}

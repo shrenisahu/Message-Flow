@@ -15,17 +15,17 @@ function CustomNode({ data = { label: "custom node" }, isConnectable = "true", }
                 onConnect={(params) => console.log('handle onConnect2', params)}
                 isConnectable={isConnectable}
             />
-            <div class="custom-box">
-                <div class="upper-half">
-                    <div class="upper-half-container">
-                        <img src={logo} class="left-icon" alt='logo'/>
-                        <p class="heading">Send Message</p>
+            <div className="custom-box">
+                <div className="upper-half">
+                    <div className="upper-half-container">
+                        <img src={logo} className="left-icon" alt='logo'/>
+                        <p className="heading">Send Message</p>
                     </div>
-                    <img src={whatsapp} class="right-icon" alt='logo'/>
+                    <img src={whatsapp} className="right-icon" alt='logo'/>
                 </div>
 
-                <div class="lower-half">
-                    <p class="dynamic-data">{data.label}</p>
+                <div className="lower-half">
+                    <p className="dynamic-data">{data.label}</p>
                 </div>
             </div>
             <Handle
