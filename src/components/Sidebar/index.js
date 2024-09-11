@@ -4,39 +4,34 @@ import NodesPanel from '../NodesPanel/index';
 import SettingsPanel from '../SettingsPanel/index';
 const Sidebar = ({ showTextBox, editTextValue, handleEditChange, handleUpdateClick, handleNodesPanel }) => {
 
-  const [_, setType] = useDnD();
+    const [_, setType] = useDnD();
 
-  const onDragStart = (event, nodeType) => {
-    console.log("onDragStart")
-    setType(nodeType);
-    event.dataTransfer.effectAllowed = 'move';
-  };
+    const onDragStart = (event, nodeType) => {
+        console.log("onDragStart")
+        setType(nodeType);
+        event.dataTransfer.effectAllowed = 'move';
+    };
 
-  return (
-    <aside>
+    return (
+        <aside>
 
-      {showTextBox ?
-        <SettingsPanel
-          editTextValue={editTextValue}
-          handleEditChange={handleEditChange}
-          handleUpdateClick={handleUpdateClick}
-          handleNodesPanel={handleNodesPanel}
-        />
-        :
-        <div>
-          <NodesPanel
-            onDragStart={onDragStart}
-          />
+            {showTextBox ?
+                <SettingsPanel
+                    editTextValue={editTextValue}
+                    handleEditChange={handleEditChange}
+                    handleUpdateClick={handleUpdateClick}
+                    handleNodesPanel={handleNodesPanel}
+                />
+                :
+                <div>
+                    <NodesPanel
+                        onDragStart={onDragStart}
+                    />
+                </div>
+            }
 
-
-
-
-
-        </div>
-      }
-
-    </aside>
-  );
+        </aside>
+    );
 };
 
 export default Sidebar;

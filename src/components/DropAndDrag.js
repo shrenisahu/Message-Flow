@@ -1,29 +1,17 @@
-import React, { useRef, useCallback, useState, Suspense, useEffect } from 'react';
-import {
-    ReactFlow,
-    ReactFlowProvider,
-    addEdge,
-    useNodesState,
-    useEdgesState,
-    Controls,
-    useReactFlow,
-    applyNodeChanges,
-    applyEdgeChanges,
-} from '@xyflow/react';
+import React, { useRef, useState, useEffect } from 'react';
+import { ReactFlow, addEdge, Controls, useReactFlow, applyNodeChanges, } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import CustomNode from './CustomNode/index.js';
 import Sidebar from '../components/Sidebar/index.js';
-import { DnDProvider, useDnD } from './DnDContext';
+import { useDnD } from './DnDContext';
 import '../index.css';
-
-
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 
 const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChange }) => {
-    const reactFlowWrapper = useRef(null);
 
+    const reactFlowWrapper = useRef(null);
     const { screenToFlowPosition } = useReactFlow();
     const [type] = useDnD();
     const [editId, setEditId] = useState();
@@ -53,14 +41,9 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
     const onDrop = (event) => {
         console.log("onDrop", event.target.innerHTML)
         event.preventDefault();
-
-
-        // check if the dropped element is valid
         if (!type) {
             return;
         }
-
-        
         const position = screenToFlowPosition({
             x: event.clientX,
             y: event.clientY,
@@ -74,19 +57,14 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
             position,
             data: { label: `message node${id}` },
         };
-        
-
         setNodes((nds) => nds.concat(newNode));
     }
-
 
     const onNodeClick = (e, val) => {
         setShowTextBox(true)
         console.log("onNodeClick", val)
         setEditId(val.id)
         setEditTextValue(val.data.label)
-       
-
     }
 
     const handleEditChange = (e) => {
@@ -95,19 +73,17 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
         console.log("editchange", e.target.value)
 
     }
-    const isValidConnection = (props) => {
 
+    const isValidConnection = (props) => {
         let isValid = edges.findIndex((elem) => elem.source === props.source);
         console.log(props.source, isValid)
         if (isValid === -1)
             return true;
 
         return false;
-
     }
 
     const handleUpdateClick = () => {
-
         const res = nodes?.map((elem) => {
             if (elem.id == editId) {
                 elem.data = {
@@ -125,17 +101,19 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
         // setEditId("");
         // setEditTextValue("");
         // setShowTextBox(false)
-
     }
 
 
-useEffect(()=>{
-    handleUpdateClick();
-},[editId,editTextValue])
+    useEffect(() => {
+        handleUpdateClick();
+    }, [editId, editTextValue])
+
     const nodeTypes = {
         selector: CustomNode,
     };
+
     console.log("edges", edges, nodes);
+
     return (
         <div className="dndflow">
             <div className="reactflow-wrapper" ref={reactFlowWrapper}>

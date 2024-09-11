@@ -1,20 +1,8 @@
-// import DropDragFlow from './components/DropAndDrag';
 import DropDragFlow from './components/DropDrag';
 import '@xyflow/react/dist/style.css';
 import "./App.css"
-import { Suspense, useState } from 'react';
-import {
-  ReactFlow,
-  ReactFlowProvider,
-  addEdge,
-  useNodesState,
-  useEdgesState,
-  Controls,
-  useReactFlow,
-  applyNodeChanges,
-  applyEdgeChanges,
-} from '@xyflow/react';
-
+import { useState } from 'react';
+import { useNodesState, useEdgesState } from '@xyflow/react';
 
 function App() {
   const initialNodes = [
@@ -29,8 +17,8 @@ function App() {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  const [showError, setShowError] = useState(false)
-  // const [onSave, setOnSave]= useState(true)
+  const [showError, setShowError] = useState(false);
+
   const handleSaveClick = () => {
     let totalNode = nodes?.length;
     const sett = new Set();
@@ -41,13 +29,13 @@ function App() {
       setShowError(true)
       console.log("error")
     }
-    else
-      {
-        setShowError(false)
-        console.log("success")
-      }
+    else {
+      setShowError(false)
+      console.log("success")
+    }
 
   }
+
   return (
     <>
       <div className='main-app' >
@@ -57,12 +45,10 @@ function App() {
             onClick={() => handleSaveClick()}
           >Save Changes</button>
 
-          {
-            showError && <button className="error-button" >Cannot Save Flow</button>
-          }
+          {showError && <button className="error-button" >Cannot Save Flow</button>}
+
         </div>
-
-
+        
         <DropDragFlow
           nodes={nodes}
           setNodes={setNodes}
@@ -70,8 +56,6 @@ function App() {
           edges={edges}
           setEdges={setEdges}
           onEdgesChange={onEdgesChange}
-
-
           handleSaveClick={handleSaveClick} />
       </div>
     </>

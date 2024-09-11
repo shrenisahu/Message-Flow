@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Handle, Position } from '@xyflow/react';
 import logo from "../NodeTypes/Message/message-icon.png"
 import whatsapp from "../CustomNode/whatsapp.png"
