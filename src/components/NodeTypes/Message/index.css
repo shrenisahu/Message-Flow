@@ -1,33 +1,38 @@
-.message-node_container{
-    margin-bottom: 7px;
-    margin-top: 7px;
-    /* background-color: red; */
-    margin-right: 5px;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    border-radius: 6%;
-    border: 1px solid #8896CB;
-
-}
-
-.message-node_message-container{
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-align-items: center;
-
-    flex-direction: column;
-}
-
-.message-node_image{
-    width: 20px;
-    height: 20px;
-    padding-bottom: 5px;
-}
-
-.message-node_span{
-color:#8896CB;;
-}
+:root {
+    --primary-color: #8896CB; 
+  }
+  
+  .message-node_container {
+      margin: 7px 5px 7px 0;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      border-radius: 6%;
+      border: 1px solid var(--primary-color);
+  }
+  
+  .message-node_message-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .message-node_image {
+      width: 20px;
+      height: 20px;
+      padding-bottom: 5px;
+  }
+  
+  .message-node_span {
+      color: var(--primary-color);
+  }
+  
+  @media (max-width: 650px) {
+      .message-node_container {
+          height: 90px;
+      }
+  }
+  
