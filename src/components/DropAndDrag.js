@@ -48,9 +48,7 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
             x: event.clientX,
             y: event.clientY,
         });
-        const data = {
-            label: "shree"
-        }
+
         const newNode = {
             id: getId(),
             type,
@@ -85,7 +83,7 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
 
     const handleUpdateClick = () => {
         const res = nodes?.map((elem) => {
-            if (elem.id == editId) {
+            if (elem.id === editId) {
                 elem.data = {
                     ...elem.data,
                     label: editTextValue
@@ -105,8 +103,8 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
 
 
     useEffect(() => {
-        handleUpdateClick();
-    }, [editId, editTextValue])
+        handleUpdateClick()
+    }, [editId, editTextValue]);
 
     const nodeTypes = {
         selector: CustomNode,
