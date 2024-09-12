@@ -10,13 +10,13 @@ const MessageNode = () => {
      */
     const [, setType] = useDnD();
 
-    const onDragStart1 = (event, nodeType) => {
+    const onDragStart = (event, nodeType) => {
         setType(nodeType);
         event.dataTransfer.effectAllowed = 'move';
     };
 
     return (
-        <div className='message-node_container' onDragStart={(event) => onDragStart1(event, 'selector')} draggable>
+        <div className='message-node_container' onDragStart={(event) => onDragStart(event, 'selector')} draggable>
             <div className='message-node_message-container'>
                 <img src={message} className='message-node_image' alt='message' />
                 <span className='message-node_span'> Message</span>

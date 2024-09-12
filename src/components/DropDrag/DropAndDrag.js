@@ -10,7 +10,7 @@ let id = 0;
 const getId = () => `dndnode_${id++}`;
 
 const nodeTypes = {
-    selector: CustomNode,
+    selector: CustomNode, // mapping customNode to selector type
 };
 
 const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChange }) => {
@@ -48,7 +48,7 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
         const newNode = { // creating a new node when node is being dropped 
             id: getId(), // setting id using the function
             type,        // setting custom ndoe type
-            position,   
+            position,
             data: { label: `text message ${id}` },
         };
         setNodes((nds) => nds.concat(newNode));
@@ -60,11 +60,20 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
         setEditTextValue(val.data.label) // pre-fill the text are with teh selected node value
     }
 
+    /**
+     * 
+     * @param {*} e 
+     * @description called when teh current node value is being changed
+     */
     const handleEditChange = (e) => {
         e.preventDefault();
         setEditTextValue(e.target.value)
-     }
+    }
 
+    /**
+     * 
+     * @returns a boolean value indicating whether the connection is allowed to be formed or not
+     */
     const isValidConnection = (props) => {
 
         // only one edge should originate from a particular node's source handle, so checking if the passedNode source node is already a source in the edges array
@@ -76,7 +85,6 @@ const DnDFlow = ({ nodes, setNodes, edges, setEdges, onEdgesChange, onNodesChang
     }
 
     useEffect(() => {
-        console.log("useeffecet")
         // this is responsible when a node is clicked and we can edit the value inside that ndoe
         setNodes((nds) =>
             nds.map((node) => {
