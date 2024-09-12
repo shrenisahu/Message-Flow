@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+Open your terminal or command prompt.
+Navigate to the project directory: cd path/to/message-flow
+Install dependencies: npm install
+Start the development server: npm start
+Open your web browser and go to http://localhost:3000
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
