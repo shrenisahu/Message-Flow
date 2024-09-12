@@ -3,7 +3,7 @@ import "./index.css"
 import MessageNode from '../NodeTypes/Message/index';
 
 const NodesPanel = ({ onDragStart }) => {
-  
+
   return (
     <div className='nodes_panel-container'>
       <MessageNode onDragStart={onDragStart} />

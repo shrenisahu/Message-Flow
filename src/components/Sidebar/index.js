@@ -3,7 +3,7 @@ import { useDnD } from '../hooks/useDndContext';
 import NodesPanel from '../NodesPanel/index';
 import SettingsPanel from '../SettingsPanel/index';
 
-const Sidebar = ({ showTextBox, editTextValue, handleEditChange, handleNodesPanel }) => {
+const Sidebar = ({ showTextBox, editTextValue, handleEditChange = () => { }, handleNodesPanel = () => { } }) => {
     const [, setType] = useDnD();
 
     const onDragStart = (event, nodeType) => {
