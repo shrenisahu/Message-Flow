@@ -4,6 +4,9 @@ import DropDragFlow from './components/DropDrag';
 import '@xyflow/react/dist/style.css';
 import "./App.css";
 
+/**
+ * @description this indicates the nodes which will be loaded initially as soon as teh app loads
+ */
 const initialNodes = [
   {
     id: '1',
@@ -18,6 +21,9 @@ export default function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [showError, setShowError] = useState(false);
 
+  /**
+   * @description onSave button click this fucntion performs validations and shows error button on failed validations
+   */
   const handleSaveClick = useCallback(() => {
     // onSave button click need to check if there exists more than one node which have empty target handles
     // storing all targets in edges array into a Set, because set stores unique values
