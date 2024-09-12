@@ -7,9 +7,7 @@ const NodesPanel = ({ onDragStart }) => {
   return (
     <div className='nodes_panel-container'>
       <MessageNode onDragStart={onDragStart} />
-      <MessageNode onDragStart={onDragStart} />
-      <MessageNode onDragStart={onDragStart} />
-      <MessageNode onDragStart={onDragStart} />
+      {/*  can introduce multiple types of nodes here */}
     </div>
   )
 }
