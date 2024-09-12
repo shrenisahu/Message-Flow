@@ -1,54 +1,74 @@
+:root {
+  --box-margin: 2px;
+  --box-min-width: 110px;
+  --box-border-radius: 6px;
+  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  --box-border-hover: 1px solid blue;
+  
+  --bg-color: aquamarine;
+  --font-size-small: 8px;
+  --icon-size-small: 7px;
+  --icon-size-extra-small: 6px;
+  --icon-border-radius: 33px;
+  --icon-border: 1px solid white;
+
+  --padding-small: 2px 1px;
+  --padding-left-small: 5px;
+
+  --text-color: #333;
+}
+
 .custom-box {
-  margin: 2px;
-  min-width: 110px;
-  border-radius: 6px;
+  margin: var(--box-margin);
+  min-width: var(--box-min-width);
+  border-radius: var(--box-border-radius);
   overflow: hidden;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
 }
 
 .upper-half {
-  background-color: aquamarine;
+  background-color: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px 1px;
+  padding: var(--padding-small);
   position: relative;
-  font-size: 8px;
+  font-size: var(--font-size-small);
 }
 
 .heading {
   margin: 0;
-  font-size: 8px;
+  font-size: var(--font-size-small);
 }
 
 .left-icon {
-  height: 7px;
-  width: 7px;
-  margin-left: 3px;
-  margin-right: 3px;
+  height: var(--icon-size-small);
+  width: var(--icon-size-small);
+  margin-left: var(--box-margin);
+  margin-right: var(--box-margin);
 }
 
 .right-icon {
-  height: 6px;
-  width: 6px;
-  border-radius: 33px;
-  border: 1px solid white;
-  margin-right: 3px;
+  height: var(--icon-size-extra-small);
+  width: var(--icon-size-extra-small);
+  border-radius: var(--icon-border-radius);
+  border: var(--icon-border);
+  margin-right: var(--box-margin);
   align-self: flex-end;
 }
 
 .lower-half {
-  color: #333;
-  padding-left: 5px;
+  color: var(--text-color);
+  padding-left: var(--padding-left-small);
 }
 
 .dynamic-data {
-  font-size: 8px;
+  font-size: var(--font-size-small);
 }
 
 .custom-box:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid blue;
+  box-shadow: var(--box-shadow);
+  border: var(--box-border-hover);
 }
 
 .upper-half-container {
