@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './arrow.png';
+import arrow from './arrow.png';
 import './index.css';
 
 const SettingsPanel = ({ editTextValue, handleEditChange, handleNodesPanel }) => (
@@ -7,9 +7,9 @@ const SettingsPanel = ({ editTextValue, handleEditChange, handleNodesPanel }) =>
         <div className='settings-panel_header'>
             <img 
                 className='settings-panel_img' 
-                src={logo} 
+                src={arrow} 
                 onClick={() => handleNodesPanel(false)} 
-                alt='logo' 
+                alt='arrow' 
             />
             <span className='settings-panel_span'>Message</span>
         </div>

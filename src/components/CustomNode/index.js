@@ -1,6 +1,6 @@
 import React from 'react';
 import { Handle, Position } from '@xyflow/react';
-import logo from "../NodeTypes/Message/message-icon.png";
+import message from "../NodeTypes/Message/message-icon.png";
 import whatsapp from "../CustomNode/whatsapp.png";
 import "./index.css";
 
@@ -17,7 +17,7 @@ function CustomNode({ data = { label: "text message" }, isConnectable = true }) 
             <div className="custom-box">
                 <div className="upper-half">
                     <div className="upper-half-container">
-                        <img src={logo} className="left-icon" alt="logo" />
+                        <img src={message} className="left-icon" alt="message" />
                         <p className="heading">Send Message</p>
                     </div>
                     <img src={whatsapp} className="right-icon" alt="whatsapp" />
